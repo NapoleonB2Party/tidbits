@@ -18,7 +18,7 @@ def reproduce(entities, reproduceN):
 	newEntityLst = []
 
 	for x in range(0, reproduceN):
-		first = entities[-1]
+		first = entities[1]
 		second = entities[random.randint(0, len(entities) / 2)]
 
 		# choose genetic line
@@ -80,7 +80,7 @@ generation = 0
 bestFitness = -1
 
 while (max((o.fitness) for o in entities) != 1):
-	generation += generation
+	generation = generation + 1
 
 	# set fitness for all
 	map(lambda x: x.setFitness(target), entities)
@@ -94,7 +94,7 @@ while (max((o.fitness) for o in entities) != 1):
 	entities.sort(key = lambda x: x.fitness, reverse = True)
 
 	# kill worst half
-	kill = init_population / 2
+	kill = 250
 	entities = entities[0:kill]
 
 	# generate again
@@ -102,11 +102,11 @@ while (max((o.fitness) for o in entities) != 1):
 
 	bestFitness = max((o.fitness) for o in entities)
 	
-	print bestFitness
-	print max(entities, key = attrgetter('fitness')).output
+	print "Generation: ", generation
+	print "Best fitness: ", bestFitness
+	print "Output: ", max(entities, key = attrgetter('fitness')).output
 
-print generation
-#final = entities()
+# end
 
 
 
