@@ -94,7 +94,7 @@ while (max((o.fitness) for o in entities) != 1):
 	entities.sort(key = lambda x: x.fitness, reverse = True)
 
 	# kill worst half
-	kill = 250
+	kill = init_population / 5
 	entities = entities[0:kill]
 
 	# generate again
