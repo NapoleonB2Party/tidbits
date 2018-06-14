@@ -67,7 +67,7 @@ class Entity:
 
 
 alphabet = "abcdefghijklmnopqrstuvwxyz !ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-target = "Hello World!"
+target = "Bronwyn Elizabeth Field"
 mutation_chance = 20
 init_population = 500
 
